@@ -1,9 +1,6 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
-import '../../repositories/auth_repo.dart';
+
+import '../../project_export/project_export.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
