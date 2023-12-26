@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/project_export/project_export.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Chat App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 63, 17, 177),),
         useMaterial3: true,
       ),
+      home: const SigninPage(),
     );
   }
 }
