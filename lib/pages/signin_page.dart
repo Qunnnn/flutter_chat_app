@@ -2,6 +2,7 @@ import '../project_export/project_export.dart';
 
 class SigninPage extends StatefulWidget {
   static const String routeName = '/signin';
+
   const SigninPage({super.key});
 
   @override
@@ -24,8 +25,6 @@ class _SigninPageState extends State<SigninPage> {
     if (form == null || !form.validate()) return;
 
     form.save();
-
-    print('email: $_email, password: $_password');
 
     context.read<SigninCubit>().signin(email: _email!, password: _password!);
   }
@@ -51,7 +50,7 @@ class _SigninPageState extends State<SigninPage> {
                   shrinkWrap: true,
                   children: [
                     Image.asset(
-                      'assets/images/flutter_logo.png',
+                      'assets/images/chat.png',
                       width: 250,
                       height: 250,
                     ),
@@ -98,7 +97,10 @@ class _SigninPageState extends State<SigninPage> {
                           decoration: TextDecoration.underline,
                         ),
                       ),
-                      child: const Text('Not a member? Sign Up!'),
+                      child: const Text(
+                        'Not a member? Sign Up!',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ],
                 ),
