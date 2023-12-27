@@ -24,7 +24,7 @@ class ChatPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(child: MessagesSection()),
           InputMessageField(),
