@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
 import '../project_export/project_export.dart';
 
 class AuthRepository {
-  final FirebaseStorage firebaseFirestore;
+  final FirebaseStorage firebaseFirestorage;
   final fbAuth.FirebaseAuth firebaseAuth;
 
   AuthRepository({
-    required this.firebaseFirestore,
+    required this.firebaseFirestorage,
     required this.firebaseAuth,
   });
 
@@ -24,7 +24,7 @@ class AuthRepository {
         email: email,
         password: password,
       );
-      final storageRef =  firebaseFirestore.ref().child('user_images').child('${userCredentials.user!.uid}.jpg');
+      final storageRef =  firebaseFirestorage.ref().child('user_images').child('${userCredentials.user!.uid}.jpg');
       await storageRef.putFile(image);
     } on fbAuth.FirebaseAuthException catch (e) {
       throw CustomError(
