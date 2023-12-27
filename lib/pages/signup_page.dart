@@ -14,6 +14,7 @@ class _SignupPageState extends State<SignupPage> {
   AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
   final _passwordController = TextEditingController();
   String? _name, _email, _password;
+  File? _selectedImage;
 
   void _submit() {
     setState(() {
@@ -30,6 +31,7 @@ class _SignupPageState extends State<SignupPage> {
           name: _name!,
           email: _email!,
           password: _password!,
+          image: _selectedImage!,
         );
   }
 
@@ -61,6 +63,11 @@ class _SignupPageState extends State<SignupPage> {
                   child: ListView(
                     shrinkWrap: true,
                     children: [
+                      ImagePickerWidget(
+                        onPickImage: (selectedImage) {
+                          _selectedImage = selectedImage;
+                        },
+                      ),
                       const SizedBox(height: 20.0),
                       AppTextFormField(
                         labelText: 'Name',

@@ -1,8 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-
-import '../../models/custom_error.dart';
-import '../../repositories/auth_repo.dart';
+import 'dart:io';
+import '../../project_export/packages_export.dart';
 
 part 'signup_state.dart';
 
@@ -17,6 +14,7 @@ class SignupCubit extends Cubit<SignupState> {
     required String name,
     required String email,
     required String password,
+    required File image,
   }) async {
     emit(
       state.copyWith(
@@ -29,6 +27,7 @@ class SignupCubit extends Cubit<SignupState> {
         name: name,
         email: email,
         password: password,
+        image: image,
       );
       emit(
         state.copyWith(

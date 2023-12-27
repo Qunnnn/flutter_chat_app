@@ -1,15 +1,13 @@
-import 'dart:async';
-
-
 import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
 
 import '../project_export/project_export.dart';
 
-
 class AuthRepository {
-  // final FirebaseFirestore firebaseFirestore;
+  final FirebaseStorage firebaseFirestore;
   final fbAuth.FirebaseAuth firebaseAuth;
+
   AuthRepository({
+    required this.firebaseFirestore,
     required this.firebaseAuth,
   });
 
@@ -19,13 +17,15 @@ class AuthRepository {
     required String name,
     required String email,
     required String password,
+    required File image,
   }) async {
     try {
-      final fbAuth.UserCredential userCredential =
-          await firebaseAuth.createUserWithEmailAndPassword(
+      final userCredentials = await firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      final storageRef =  firebaseFirestore.ref().child('user_images').child('${userCredentials.user!.uid}.jpg');
+      await storageRef.putFile(image);
     } on fbAuth.FirebaseAuthException catch (e) {
       throw CustomError(
         code: e.code,

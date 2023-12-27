@@ -8,3 +8,6 @@ export 'package:flutter_chat_app/repositories/index.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:equatable/equatable.dart';
+export 'package:image_picker/image_picker.dart';
+export 'package:firebase_storage/firebase_storage.dart';
+export 'package:bloc/bloc.dart';
