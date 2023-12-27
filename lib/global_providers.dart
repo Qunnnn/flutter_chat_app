@@ -11,7 +11,7 @@ class GlobalProviders extends StatelessWidget {
         providers: [
           RepositoryProvider<AuthRepository>(
             create: (context) => AuthRepository(
-              firebaseFirestore: FirebaseStorage.instance,
+              firebaseFirestorage: FirebaseStorage.instance,
               firebaseAuth: FirebaseAuth.instance,
             ),
           ),

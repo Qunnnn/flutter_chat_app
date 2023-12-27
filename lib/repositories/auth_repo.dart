@@ -24,8 +24,17 @@ class AuthRepository {
         email: email,
         password: password,
       );
+
       final storageRef =  firebaseFirestorage.ref().child('user_images').child('${userCredentials.user!.uid}.jpg');
       await storageRef.putFile(image);
+
+      final imageUrl = await storageRef.getDownloadURL();
+
+      await userRef.doc(userCredentials.user!.uid).set({
+        'name': name,
+        'email': email,
+        'image_url': imageUrl,
+      });
     } on fbAuth.FirebaseAuthException catch (e) {
       throw CustomError(
         code: e.code,

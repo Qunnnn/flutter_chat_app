@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
                     : false;
               });
         } else if (state.authStatus == AuthStatus.authenticated) {
-          Navigator.pushReplacementNamed(context, ChatPage.routeName);
+          Navigator.pushNamed(context, ChatPage.routeName);
         }
       },
       builder: (context, state) {

@@ -24,6 +24,12 @@ class ChatPage extends StatelessWidget {
           ),
         ],
       ),
+      body: Column(
+        children: [
+          Expanded(child: MessagesSection()),
+          InputMessageField(),
+        ],
+      ),
     );
   }
 }
