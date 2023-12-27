@@ -34,6 +34,12 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _passwordController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -55,11 +61,6 @@ class _SignupPageState extends State<SignupPage> {
                   child: ListView(
                     shrinkWrap: true,
                     children: [
-                      Image.asset(
-                        'assets/images/flutter_logo.png',
-                        width: 250,
-                        height: 250,
-                      ),
                       const SizedBox(height: 20.0),
                       AppTextFormField(
                         labelText: 'Name',

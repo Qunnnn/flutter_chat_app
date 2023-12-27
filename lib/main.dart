@@ -21,7 +21,12 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 63, 17, 177),),
           useMaterial3: true,
         ),
-        home: const SigninPage(),
+        home: const SplashPage(),
+        routes: {
+          SignupPage.routeName: (context) => const SignupPage(),
+          SigninPage.routeName: (context) => const SigninPage(),
+          ChatPage.routeName: (context) => const ChatPage(),
+        },
       ),
     );
   }

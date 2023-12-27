@@ -30,6 +30,12 @@ class _SigninPageState extends State<SigninPage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _passwordController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
