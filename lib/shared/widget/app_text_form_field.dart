@@ -28,6 +28,7 @@ class AppTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool autocorrect;
   final bool obscureText;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(

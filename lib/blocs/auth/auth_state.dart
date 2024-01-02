@@ -34,8 +34,3 @@ class AuthState extends Equatable {
     );
   }
 }
-
-extension AuthStateX on AuthState {
-  bool get isAuthenticated => authStatus == AuthStatus.authenticated;
-}
-

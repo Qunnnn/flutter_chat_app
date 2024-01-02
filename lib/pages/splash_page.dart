@@ -2,6 +2,7 @@ import '../project_export/project_export.dart';
 
 class SplashPage extends StatelessWidget {
   static const String routeName = '/';
+
   const SplashPage({Key? key}) : super(key: key);
 
   @override
@@ -10,12 +11,11 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         if (state.authStatus == AuthStatus.unauthenticated) {
           Navigator.pushNamedAndRemoveUntil(context, SigninPage.routeName,
-                  (route) {
-
-                return route.settings.name == ModalRoute.of(context)!.settings.name
-                    ? true
-                    : false;
-              });
+              (route) {
+            return route.settings.name == ModalRoute.of(context)!.settings.name
+                ? true
+                : false;
+          });
         } else if (state.authStatus == AuthStatus.authenticated) {
           Navigator.pushNamed(context, ChatPage.routeName);
         }

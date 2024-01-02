@@ -25,7 +25,10 @@ class AuthRepository {
         password: password,
       );
 
-      final storageRef =  firebaseFirestorage.ref().child('user_images').child('${userCredentials.user!.uid}.jpg');
+      final storageRef = firebaseFirestorage
+          .ref()
+          .child('user_images')
+          .child('${userCredentials.user!.uid}.jpg');
       await storageRef.putFile(image);
 
       final imageUrl = await storageRef.getDownloadURL();
