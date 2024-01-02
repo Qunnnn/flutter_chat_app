@@ -10,7 +10,6 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-
   void setupPushNotifications() async {
     final fcm = FirebaseMessaging.instance;
 
@@ -18,7 +17,6 @@ class _ChatPageState extends State<ChatPage> {
 
     fcm.subscribeToTopic('chat');
   }
-
 
   @override
   void initState() {

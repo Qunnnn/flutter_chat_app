@@ -6,9 +6,11 @@ class AppElevatedButton extends StatelessWidget {
       this.text,
       this.fontWeight = FontWeight.bold,
       required this.onPressed});
+
   final String? text;
   final FontWeight? fontWeight;
   final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
